@@ -17,9 +17,9 @@ const ContactLeft = () => {
       <div className="flex flex-col gap-4">
         <h3 className="text-3xl font-bold text-white">Saibu Azeez</h3>
         <p className="text-lg font-normal text-gray-400">
-          Front-end Developer
+          Web Developer
         </p>
-        <p className="text-base text-gray-400 tracking-wide">
+        <p className="text-sm text-justify text-gray-400 ">
         My expertise lies in translating design concepts into seamless, responsive layouts, utilizing HTML, CSS, and JavaScript to bring ideas to life with precision and finesse.
 
         </p>

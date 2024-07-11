@@ -4,7 +4,7 @@ import Media from './Media';
 
 const LeftBanner = () => {
     const [text] = useTypewriter({
-      words: ["Web developer.", "Front-end Developer.", "UI Designer."],
+      words: ["Web developer.", "Creative Thinker.", "JavaScript Expert.", "Problem Solver.", "Team Player."],
       loop: true,
       typeSpeed: 20,
       deleteSpeed: 10,
@@ -25,7 +25,7 @@ const LeftBanner = () => {
             cursorColor="#ff014f"
           />
         </h2>
-        <p className="text-base font-bodyFont leading-6 tracking-wide">
+        <p className="text-sm font-bodyFont text-justify leading-6 tracking-wide">
          My expertise lies in translating design concepts into seamless, responsive layouts, utilizing HTML, CSS, and JavaScript to bring ideas to life with precision and finesse.
          Beyond coding, I am deeply invested in user-centered design principles. Whether brainstorming ideas, troubleshooting issues, or iterating on feedback, I approach every interaction with enthusiasm and a commitment to excellence.
          I am eager to contribute my skills and creativity to projects that inspire and challenge me, forging meaningful connections and leaving a lasting impact on the digital landscape.
