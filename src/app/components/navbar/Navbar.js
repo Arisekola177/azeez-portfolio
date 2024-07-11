@@ -12,13 +12,13 @@ const Navbar = () => {
   const [showMenu, setShowMenu]=useState(false)
   return (
     <div className="w-full sticky top-0 z-50 bg-bodyColor  font-titleFont border-b-[1px] border-b-gray-600">
-      <div className='w-10/12 mx-auto py-4 flex justify-between items-center'>
-      <div className='flex items-center gap-4'>
-        <Image src={logo} className='rounded-full w-[50px]' width='auto' height='auto' alt='logo' />
+      <div className='w-full md:w-10/12 mx-auto py-4 flex justify-between items-center'>
+      <div className='flex items-center gap-2'>
+        <Image src={logo} className='rounded-full w-[30px]' width='auto' height='auto' alt='logo' />
         <p className='uppercase font-semibold hover:text-designColor duration-300 cursor-pointer'>Arisekola</p>
       </div>
       <div>
-        <ul className="hidden mdl:inline-flex items-center gap-6 lg:gap-10">
+        <ul className="hidden md:inline-flex items-center gap-6 lg:gap-10">
           {navLinksdata.map(({ _id, title, link }) => (
             <li
               className="text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300"
@@ -39,16 +39,16 @@ const Navbar = () => {
         </ul>
         <span
           onClick={() => setShowMenu(!showMenu)}
-          className="text-xl mdl:hidden bg-black w-10 h-10 inline-flex items-center justify-center rounded-full text-designColor cursor-pointer"
+          className="text-lg md:hidden bg-black w-10 h-10 inline-flex items-center justify-center rounded-full text-designColor cursor-pointer"
         >
           <FiMenu />
         </span>
         {showMenu && (
           <div className="w-[80%] h-screen overflow-scroll absolute top-0 left-0 bg-gray-900 p-4 scrollbar-hide">
-            <div className="flex flex-col gap-8 py-2 relative">
+            <div className="flex flex-col gap-8 py-4 relative">
               <div>
-                <Image className="w-32 rounded-full" width='auto' height='auto' src={logo} alt="logo" />
-                <p className="text-xs text-gray-400 mt-2">
+                <Image className="w-16 rounded-full" width='auto' height='auto' src={logo} alt="logo" />
+                <p className="text-xs text-justify text-gray-400 mt-2">
                 My expertise lies in translating design concepts into seamless, responsive layouts, utilizing HTML, CSS, and JavaScript to bring ideas to life with precision and finesse.
 
                 </p>
@@ -57,7 +57,7 @@ const Navbar = () => {
                 {navLinksdata.map((item) => (
                   <li
                     key={item._id}
-                    className="text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300"
+                    className="text-xs font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300"
                   >
                     <Link
                       onClick={() => setShowMenu(false)}

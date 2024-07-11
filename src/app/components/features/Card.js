@@ -24,7 +24,7 @@ const Card = ({item:{title,des,icon}}) => {
             <h2 className="text-xl md:text-2xl font-titleFont font-bold text-gray-300">
               {title}
             </h2>
-            <p className="base">{des}</p>
+            <p className="xs:text-sm lg:text-base">{des}</p>
             <span className="text-2xl text-designColor">
               <HiArrowRight />
             </span>
