@@ -35,7 +35,7 @@ const ProjectsCard = ({ title, des, src,  github, live }) => {
               </span>
             </div>
           </div>
-          <p className="text-sm tracking-wide mt-3 text-justify hover:text-gray-100 duration-300">
+          <p className="text-sm tracking-wide mt-3  hover:text-gray-100 duration-300">
             {des}
           </p>
         </div>

@@ -4,6 +4,8 @@ import  projectOne  from "../../assets/images/projects/streamtube.jpg";
 import  projectTwo  from "../../assets/images/projects/shopcart.jpg";
 import  projectThree  from "../../assets/images/projects/getlink.jpg";
 import  projectFour  from "../../assets/images/projects/meta.jpg";
+import  projectFive  from "../../assets/images/projects/denodata.jpg";
+import  projectSix  from "../../assets/images/projects/chatter.jpg";
 import ProjectsCard from './ProjectsCard';
 
 const Projects = () => {
@@ -51,7 +53,25 @@ const Projects = () => {
           github='https://github.com/Arisekola177/meta'
           live='https://meta-henna-three.vercel.app/'
         />
-       
+         <ProjectsCard
+          title="Chatter"
+          des="Chatter Blog Application. A full-stack blog application built with Next.js, Prisma, MongoDB, Firebase, and Tailwind CSS.
+                 Features
+                 User authentication and authorization
+                 Create, read, update, and delete (CRUD) blog posts
+                Image and video upload and storage using Firebase
+                Responsive design with Tailwind CSS."
+          src={projectSix}
+          github='https://github.com/Arisekola177/chatter'
+          live='https://chatter-nine-sigma.vercel.app/'
+        />
+          <ProjectsCard
+          title="Denodata"
+          des="Business solution application for a company into supermarket solutions."
+          src={projectFive}
+          github='https://github.com/Arisekola177/denodata'
+          live='https://denodata.vercel.app/'
+        />
       </div>
     </section>
   );
