@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import { FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
-import logo from '../../assets/Ola1.jpg'
+import logo from '../../assets/me.jpg'
 import { navLinksdata } from '../../constants';
 import Image from 'next/image';
 
@@ -12,7 +12,7 @@ const Navbar = () => {
   const [showMenu, setShowMenu]=useState(false)
   return (
     <div className="w-full sticky top-0 z-50 bg-bodyColor  font-titleFont border-b-[1px] border-b-gray-600">
-      <div className='w-full md:w-10/12 mx-auto py-4 flex justify-between items-center'>
+      <div className='w-full py-4 flex justify-between items-center'>
       <div className='flex items-center gap-2'>
         <Image src={logo} className='rounded-full w-[30px]' width='auto' height='auto' alt='logo' />
         <p className='uppercase font-semibold hover:text-designColor duration-300 cursor-pointer'>Arisekola</p>

@@ -1,5 +1,5 @@
 
-import  bannerImg  from "../../assets/Ola.jpg";
+import  bannerImg  from "../../assets/me.jpg";
 import Image from 'next/image';
 
 const RightBanner = () => {

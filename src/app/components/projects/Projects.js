@@ -1,11 +1,11 @@
 import React from 'react'
 import Title from '../layouts/Title'
-import  projectOne  from "../../assets/images/projects/streamtube.jpg";
-import  projectTwo  from "../../assets/images/projects/shopcart.jpg";
-import  projectThree  from "../../assets/images/projects/getlink.jpg";
-import  projectFour  from "../../assets/images/projects/meta.jpg";
-import  projectFive  from "../../assets/images/projects/denodata.jpg";
-import  projectSix  from "../../assets/images/projects/chatter.jpg";
+import  projectOne  from "../../assets/images/projects/streamtube.png";
+import  projectTwo  from "../../assets/images/projects/shopcart.png";
+import  projectThree  from "../../assets/images/projects/Teleios.png";
+import  projectFour  from "../../assets/images/projects/Teleios lms.png";
+import  projectFive  from "../../assets/images/projects/Teleios Admin.png";
+import  projectSix  from "../../assets/images/projects/raven.png";
 import ProjectsCard from './ProjectsCard';
 
 const Projects = () => {
@@ -40,37 +40,32 @@ const Projects = () => {
           live='https://shopcart-coral.vercel.app/'
         />
         <ProjectsCard
-          title="Getlinked"
-          des="Real world application with impressive user interface. Built with react, tailwind and framer-motion."
+          title="Teleios"
+          des="An edtech platform that offers online courses, built with React for the frontend and Node.js for the backend, providing a seamless learning experience."
           src={projectThree}
-          github='https://github.com/Arisekola177/getlink-app'
-          live='https://getlink-app.vercel.app/'
+          github=''
+          live='https://jointeleios.com/'
         />
         <ProjectsCard
-          title="Meta"
-          des="Real world application with impressive user interface. Built with react, tailwind and framer-motion."
+          title="Teleios LMS"
+          des="Learning Management System for Teleios platform, built with React for the frontend and Node.js for the backend, enabling efficient course management and delivery."
           src={projectFour}
-          github='https://github.com/Arisekola177/meta'
-          live='https://meta-henna-three.vercel.app/'
+          github=''
+          live='https://app.jointeleios.com/'
         />
          <ProjectsCard
-          title="Chatter"
-          des="Chatter Blog Application. A full-stack blog application built with Next.js, Prisma, MongoDB, Firebase, and Tailwind CSS.
-                 Features
-                 User authentication and authorization
-                 Create, read, update, and delete (CRUD) blog posts
-                Image and video upload and storage using Firebase
-                Responsive design with Tailwind CSS."
-          src={projectSix}
-          github='https://github.com/Arisekola177/chatter'
-          live='https://chatter-nine-sigma.vercel.app/'
+          title="Teleios Admin Dashboard"
+          des="Admin dashboard for Teleios platform, built with React for the frontend and Node.js for the backend, facilitating effective administration and oversight of the platform."
+          src={projectFive}
+          github=''
+          live='admin.jointeleios.com'
         />
           <ProjectsCard
-          title="Denodata"
-          des="Business solution application for a company into supermarket solutions."
-          src={projectFive}
-          github='https://github.com/Arisekola177/denodata'
-          live='https://denodata.vercel.app/'
+          title="Raven"
+          des="Aviation fuel service platform built with Next.js for the frontend and Node.js for the backend, streamlining fuel management and operations in the aviation industry."
+          src={projectSix}
+          github=''
+          live='https://main.dz6045uj9dn0m.amplifyapp.com/'
         />
       </div>
     </section>
