@@ -1,26 +1,56 @@
 import { AiFillAppstore } from "react-icons/ai";
-import { FaMobile, FaGlobe} from "react-icons/fa";
-import { SiProgress, SiAntdesign } from "react-icons/si";
+import { FaServer } from "react-icons/fa";
+import { SiShopify } from "react-icons/si";
 
-// Features Data
+// Features / Services Data
 export const featuresData = [
-  
   {
-    id: 2,
+    id: 1,
     icon: <AiFillAppstore />,
     title: "Web Development",
-    des: "As a web developer, I build website user interfaces and user experiences using HTML, CSS, and JavaScript, focusing on responsiveness, accessibility, and performance. I collaborate with teams to deliver high-quality web solutions and stay updated with the latest frontend trends and technologies.",
+    des: "I develop responsive, high-performance web applications using Next.js, React, and modern frontend tools. Focused on clean code, excellent UX, and scalability — from landing pages to complex SPAs.",
+  },
+  {
+    id: 2,
+    icon: <FaServer />,
+    title: "Full-Stack Solutions",
+    des: "End-to-end development including backend APIs (Node.js + Prisma + MongoDB), user authentication (NextAuth), secure payment integrations (Stripe), and feature-rich admin dashboards.",
   },
   {
     id: 3,
-    icon: <SiProgress />,
-    title: "SEO Optimisation",
-    des: "I optimize websites for search engines using keyword research, on-page and technical optimization, content creation, link building, and analytics tracking to improve online visibility, drive traffic, and increase conversions, staying up-to-date with the latest SEO trends and best practices",
-  },
-  {
-    id: 6,
-    icon: <FaGlobe />,
-    title: "Hosting Websites",
-    des: "I offer fast, secure, and reliable mobile web hosting with scalable infrastructure, high-speed servers, SSL encryption, and 24/7 support, ensuring seamless mobile experiences and improved user engagement.",
+    icon: <SiShopify />,
+    title: "E-commerce & SaaS",
+    des: "Building online stores and SaaS platforms with secure checkout flows, user account management, product management systems, and real-time features — from idea to production.",
   },
 ];
+
+// Skills Data
+export const skillsData = {
+  frontend: [
+    { name: "React", icon: "FaReact" },
+    { name: "Next.js", icon: "SiNextdotjs" },
+    { name: "TypeScript", icon: "SiTypescript" },
+    { name: "Tailwind CSS", icon: "SiTailwindcss" },
+    { name: "HTML5", icon: "FaHtml5" },
+    { name: "CSS3", icon: "FaCss3Alt" },
+    { name: "JavaScript ES6+", icon: "IoLogoJavascript" },
+  ],
+  backend: [
+    { name: "Node.js", icon: "FaNodeJs" },
+    { name: "Express", icon: "SiExpress" },
+    { name: "Prisma", icon: "SiPrisma" },
+    { name: "MongoDB", icon: "SiMongodb" },
+  ],
+  tools: [
+    { name: "Stripe", icon: "SiStripe" },
+    { name: "NextAuth", icon: "SiAuth0" },
+    { name: "Git / GitHub", icon: "FaGithub" },
+    { name: "Vercel", icon: "SiVercel" },
+    { name: "REST APIs", icon: "TbApi" },
+    { name: "SEO Basics", icon: "MdOutlineTravelExplore" },
+  ],
+  learning: [
+    { name: "Docker", icon: "FaDocker" },
+    { name: "DevOps", icon: "FaInfinity" },
+  ],
+};

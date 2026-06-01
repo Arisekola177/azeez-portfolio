@@ -34,22 +34,29 @@ const Contact = () => {
 
   const onSubmit = async (data) => {
     try {
-      toast('Sending, Please wait.....')
+      toast('Sending, Please wait.....');
       setIsLoading(true);
-      const response = await fetch('/api/contact', {
+
+      const formData = new URLSearchParams();
+      formData.append("Name", data.username);
+      formData.append("Email", data.email);
+      formData.append("Phone Number", data.phoneNumber);
+      formData.append("Subject", data.subject);
+      formData.append("Message", data.message);
+      formData.append("_captcha", "false");
+      formData.append("_subject", `New Portfolio Message: ${data.subject}`);
+
+      await fetch('https://formsubmit.co/shuaibazeez14@gmail.com', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(data),
+        body: formData,
+        mode: 'no-cors',
       });
 
-      if (response.ok) {
-        toast.success('Message sent successfully!');
-        reset();
-      } else {
-        toast.error('Failed to send message. Please try again later.');
-      }
+      toast.success('Message sent successfully!');
+      reset();
     } catch (error) {
       console.error('Error sending message:', error);
       toast.error('An error occurred. Please try again later.');
