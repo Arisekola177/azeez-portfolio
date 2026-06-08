@@ -13,20 +13,24 @@ module.exports = {
         xl: "1280px",
       },
       fontFamily: {
-        bodyFont: ["Poppins", "sans-serif"],
-        titleFont: ["Montserrat", "sans-serif"],
+        mono: ["'Space Mono'", "monospace"],
+        serif: ["'Playfair Display'", "Georgia", "serif"],
+        sans: ["'Inter'", "sans-serif"],
       },
       colors: {
-        bodyColor: "#212428",
-        lightText: "#c4cfde",
-        boxBg: "linear-gradient(145deg, #1e2024, #23272b)",
-        designColor: "#4f83cc",
+        ink: "#0a0a0a",
+        bone: "#f5f0e8",
+        inkLight: "#1a1a1a",
+        inkMid: "#2a2a2a",
+        inkBorder: "#2e2e2e",
+        dusty: "#888888",
+        dustyLight: "#aaaaaa",
+        accent: "#e8e0d0",
       },
-      boxShadow: {
-        shadowOne: "10px 10px 19px #1c1e22, -10px -10px 19px #262a2e",
+      letterSpacing: {
+        widest2: "0.25em",
       },
     },
   },
   plugins: [],
 };
-

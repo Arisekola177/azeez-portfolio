@@ -1,4 +1,3 @@
-
 import Footer from "./components/footer/Footer";
 import FooterBottom from "./components/footer/FooterBottom";
 import Navbar from "./components/navbar/Navbar";
@@ -32,17 +31,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <div className="w-full h-auto bg-bodyColor text-lightText px-4">
-          <Navbar />
-          <div className="max-w-screen-xl mx-auto">{children}</div>
-          <Footer />
-          <FooterBottom />
-        </div>
+      <body className="bg-ink text-bone min-h-screen">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+        <FooterBottom />
         <ToastContainer
           position="bottom-right"
           autoClose={4000}
           theme="dark"
+          toastStyle={{
+            background: '#1a1a1a',
+            border: '1px solid #2e2e2e',
+            color: '#f5f0e8',
+            fontFamily: "'Space Mono', monospace",
+            fontSize: '12px',
+          }}
         />
       </body>
     </html>

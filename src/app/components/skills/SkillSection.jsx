@@ -1,126 +1,85 @@
 'use client'
 import { motion } from 'framer-motion';
-import {
-  FaReact, FaNodeJs, FaGithub, FaHtml5, FaCss3Alt, FaDocker, FaInfinity
-} from 'react-icons/fa';
-import {
-  SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb,
-  SiPrisma, SiStripe, SiVercel, SiExpress
-} from 'react-icons/si';
-import Title from '../layouts/Title';
 
-const iconMap = {
-  FaReact: <FaReact />,
-  FaNodeJs: <FaNodeJs />,
-  FaGithub: <FaGithub />,
-  FaHtml5: <FaHtml5 />,
-  FaCss3Alt: <FaCss3Alt />,
-  FaDocker: <FaDocker />,
-  FaInfinity: <FaInfinity />,
-  SiNextdotjs: <SiNextdotjs />,
-  SiTypescript: <SiTypescript />,
-  SiTailwindcss: <SiTailwindcss />,
-  SiMongodb: <SiMongodb />,
-  SiPrisma: <SiPrisma />,
-  SiStripe: <SiStripe />,
-  SiVercel: <SiVercel />,
-  SiExpress: <SiExpress />,
-};
-
-const categoryColors = {
-  Frontend:   { border: 'border-blue-500',   badge: 'bg-blue-500/10 text-blue-400 border-blue-500/30',   icon: 'text-blue-400' },
-  Backend:    { border: 'border-green-500',  badge: 'bg-green-500/10 text-green-400 border-green-500/30', icon: 'text-green-400' },
-  'Tools & Others': { border: 'border-purple-500', badge: 'bg-purple-500/10 text-purple-400 border-purple-500/30', icon: 'text-purple-400' },
-  'Currently Learning': { border: 'border-designColor', badge: 'bg-red-500/10 text-designColor border-designColor/30', icon: 'text-designColor' },
-};
-
-const skillCategories = [
+const stackRows = [
   {
-    label: 'Frontend',
-    skills: [
-      { name: 'React',            icon: 'FaReact' },
-      { name: 'Next.js',          icon: 'SiNextdotjs' },
-      { name: 'TypeScript',       icon: 'SiTypescript' },
-      { name: 'Tailwind CSS',     icon: 'SiTailwindcss' },
-      { name: 'HTML5',            icon: 'FaHtml5' },
-      { name: 'CSS3',             icon: 'FaCss3Alt' },
-    ],
+    num: '01',
+    category: 'Languages',
+    items: ['TypeScript', 'JavaScript ES6+', 'HTML5', 'CSS3'],
   },
   {
-    label: 'Backend',
-    skills: [
-      { name: 'Node.js',  icon: 'FaNodeJs' },
-      { name: 'Express',  icon: 'SiExpress' },
-      { name: 'Prisma',   icon: 'SiPrisma' },
-      { name: 'MongoDB',  icon: 'SiMongodb' },
-    ],
+    num: '02',
+    category: 'Frameworks',
+    items: ['Next.js', 'React', 'Node.js', 'Express'],
   },
   {
-    label: 'Tools & Others',
-    skills: [
-      { name: 'Stripe',     icon: 'SiStripe' },
-      { name: 'Git/GitHub', icon: 'FaGithub' },
-      { name: 'Vercel',     icon: 'SiVercel' },
-    ],
+    num: '03',
+    category: 'Styling',
+    items: ['Tailwind CSS', 'Framer Motion', 'CSS Modules'],
   },
   {
-    label: 'Currently Learning',
-    skills: [
-      { name: 'Docker',           icon: 'FaDocker' },
-      { name: 'DevOps',           icon: 'FaInfinity' },
-    ],
+    num: '04',
+    category: 'Data',
+    items: ['MongoDB', 'Prisma ORM', 'REST APIs'],
+  },
+  {
+    num: '05',
+    category: 'Infra & Tooling',
+    items: ['Vercel', 'Git / GitHub', 'Stripe', 'Paystack', 'NextAuth'],
+  },
+  {
+    num: '06',
+    category: 'Currently Learning',
+    items: ['Docker', 'DevOps', 'PostgreSQL'],
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 const SkillSection = () => {
   return (
-    <section id="skills" className="w-full py-20 border-b-[1px] border-b-black">
-      <Title title="Technical Expertise" des="My Skills" />
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6"
-      >
-        {skillCategories.map((cat) => {
-          const colors = categoryColors[cat.label];
-          return (
+    <section id="skills" className="w-full border-t border-inkBorder">
+      <div className="max-w-screen-xl mx-auto px-6">
+        {/* Section header */}
+        <div className="flex items-start gap-6 py-12 border-b border-inkBorder">
+          <span className="font-mono text-[11px] text-dusty min-w-[48px]">03</span>
+          <span className="font-mono text-[11px] text-dusty uppercase tracking-widest">Stack</span>
+        </div>
+
+        {/* Stack rows */}
+        <div className="divide-y divide-inkBorder">
+          {stackRows.map((row, i) => (
             <motion.div
-              key={cat.label}
-              variants={cardVariants}
-              className={`bg-gradient-to-b from-[#1e2024] to-[#23272b] rounded-xl p-6 shadow-shadowOne border-t-4 ${colors.border} hover:-translate-y-1 transition-transform duration-300`}
+              key={row.num}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.06 }}
+              className="grid grid-cols-1 md:grid-cols-[80px_200px_1fr] items-center gap-4 py-8 project-row group"
             >
-              <h3 className="text-base font-titleFont font-semibold text-gray-200 mb-5 uppercase tracking-wider">
-                {cat.label}
-              </h3>
-              <div className="flex flex-wrap gap-3">
-                {cat.skills.map((skill) => (
-                  <span
-                    key={skill.name}
-                    className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border ${colors.badge} transition-all duration-200 hover:scale-105`}
-                  >
-                    <span className={`text-sm ${colors.icon}`}>
-                      {iconMap[skill.icon]}
+              {/* Number */}
+              <span className="font-mono text-[11px] text-dusty">{row.num}</span>
+
+              {/* Category */}
+              <span className="font-mono text-[11px] text-dusty uppercase tracking-widest">
+                {row.category}
+              </span>
+
+              {/* Skills list */}
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                {row.items.map((item, idx) => (
+                  <span key={item} className="flex items-center gap-3">
+                    <span className="font-serif text-[1.1rem] text-bone/80 group-hover:text-bone transition-colors">
+                      {item}
                     </span>
-                    {skill.name}
+                    {idx < row.items.length - 1 && (
+                      <span className="w-1 h-1 rounded-full bg-dusty/40 inline-block" />
+                    )}
                   </span>
                 ))}
               </div>
             </motion.div>
-          );
-        })}
-      </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

@@ -1,157 +1,141 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from "react-scroll";
 import NextLink from 'next/link';
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
-import { FaTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { SiUpwork } from "react-icons/si";
-import logo from '../../assets/headshot.png'
-import { navLinksdata } from '../../constants';
-import Image from 'next/image';
+
+const navLinks = [
+  { _id: 1, title: "About",    link: "about",    num: "01" },
+  { _id: 2, title: "Work",     link: "work",     num: "02" },
+  { _id: 3, title: "Stack",    link: "skills",   num: "03" },
+  { _id: 4, title: "Projects", link: "projects", num: "04" },
+  { _id: 5, title: "Contact",  link: "contact",  num: "05" },
+];
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [time, setTime] = useState('');
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const tick = () => {
+      const now = new Date();
+      setTime(now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }));
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <div className="w-full sticky top-0 z-50 bg-bodyColor font-titleFont border-b-[1px] border-b-gray-700 backdrop-blur-sm bg-opacity-95">
-      <div className="w-full py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <Image
-            src={logo}
-            className="rounded-full w-[34px] h-[34px] object-cover object-top"
-            width={34}
-            height={34}
-            alt="Saibu Azeez"
-          />
-         
-        </div>
+    <>
+      <nav className={`w-full fixed top-0 left-0 z-50 transition-all duration-500 ${scrolled ? 'bg-ink/95 backdrop-blur-md border-b border-inkBorder' : 'bg-transparent'}`}>
+        <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        {/* Desktop Nav */}
-        <div>
-          <ul className="hidden md:inline-flex items-center gap-6 lg:gap-10">
-            {navLinksdata.map(({ _id, title, link }) => (
-              <li
-                className="text-sm font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300 relative group"
-                key={_id}
-              >
+          {/* Left: Brand */}
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-bone inline-block" />
+            <span className="font-mono text-[11px] tracking-widest2 text-bone uppercase">Saibu Azeez</span>
+          </div>
+
+          {/* Center: Nav (desktop) */}
+          <ul className="hidden md:flex items-center gap-8">
+            {navLinks.map(({ _id, title, link, num }) => (
+              <li key={_id}>
                 <Link
-                  activeClass="active"
+                  activeClass="nav-active"
                   to={link}
                   spy={true}
                   smooth={true}
                   offset={-70}
-                  duration={500}
+                  duration={600}
+                  className="font-mono text-[11px] tracking-widest text-dusty hover:text-bone transition-colors duration-300 cursor-pointer uppercase"
                 >
-                  {title}
+                  <span className="mr-1 opacity-50">{num}</span>{title}
                 </Link>
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-designColor group-hover:w-full transition-all duration-300" />
               </li>
             ))}
           </ul>
 
-          {/* Hire Me button (desktop) */}
-          <div className="hidden md:inline-flex ml-6">
-            <Link
-              to="contact"
-              spy={true}
-              smooth={true}
-              offset={-70}
-              duration={500}
-              className="px-4 py-2 bg-designColor text-white text-sm font-semibold rounded-lg cursor-pointer hover:bg-opacity-80 transition-all duration-300"
-            >
-              Hire Me
-            </Link>
+          {/* Right: Status + Time */}
+          <div className="hidden md:flex items-center gap-4">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-green" />
+              <span className="font-mono text-[11px] text-dusty">Available</span>
+            </span>
+            <span className="font-mono text-[11px] text-dusty">·</span>
+            <span className="font-mono text-[11px] text-dusty">Lagos, NG</span>
+            <span className="font-mono text-[11px] text-dusty">·</span>
+            <span className="font-mono text-[11px] text-dusty tabular-nums">{time}</span>
           </div>
 
           {/* Mobile hamburger */}
-          <span
-            onClick={() => setShowMenu(!showMenu)}
-            className="text-lg md:hidden bg-black w-10 h-10 inline-flex items-center justify-center rounded-full text-designColor cursor-pointer"
+          <button
+            onClick={() => setShowMenu(true)}
+            className="md:hidden text-dusty hover:text-bone transition-colors p-1"
           >
-            <FiMenu />
-          </span>
+            <FiMenu size={18} />
+          </button>
+        </div>
+      </nav>
 
-          {/* Mobile Menu Drawer */}
-          {showMenu && (
-            <div className="w-[80%] h-screen overflow-scroll absolute top-0 left-0 bg-gray-900 p-4 scrollbar-hide z-50">
-              <div className="flex flex-col gap-8 py-4 relative">
-                <div>
-                  <Image
-                    className="w-16 h-16 rounded-full object-cover object-top"
-                    width={64}
-                    height={64}
-                    src={logo}
-                    alt="Saibu Azeez"
-                  />
-                  <p className="text-white font-semibold mt-2">Saibu Azeez</p>
-                  <p className="text-xs text-gray-400 mt-1 leading-5">
-                    Full-Stack Developer — Next.js & React Specialist based in Lagos, Nigeria.
-                    Available for remote work worldwide.
-                  </p>
-                </div>
+      {/* Mobile Drawer */}
+      {showMenu && (
+        <div className="fixed inset-0 z-[100] flex">
+          <div
+            className="absolute inset-0 bg-ink/70 backdrop-blur-sm"
+            onClick={() => setShowMenu(false)}
+          />
+          <div className="mobile-menu-enter relative z-10 w-72 h-full bg-inkLight border-r border-inkBorder flex flex-col p-8">
+            <button
+              onClick={() => setShowMenu(false)}
+              className="absolute top-5 right-5 text-dusty hover:text-bone transition-colors"
+            >
+              <MdClose size={20} />
+            </button>
 
-                <ul className="flex flex-col gap-4">
-                  {navLinksdata.map((item) => (
-                    <li
-                      key={item._id}
-                      className="text-sm font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300"
-                    >
-                      <Link
-                        onClick={() => setShowMenu(false)}
-                        activeClass="active"
-                        to={item.link}
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+            <div className="mb-10">
+              <span className="font-mono text-[11px] tracking-widest2 text-bone uppercase">Saibu Azeez</span>
+              <p className="font-mono text-[10px] text-dusty mt-1">Full-Stack Developer</p>
+            </div>
 
-                <div className="flex flex-col gap-4">
-                  <h2 className="text-base uppercase font-titleFont tracking-wider">Find me on</h2>
-                  <div className="flex gap-4">
-                    <span className="bannerIcon">
-                      <NextLink href="https://github.com/Arisekola177/" target="_blank" rel="noopener noreferrer">
-                        <FaGithub />
-                      </NextLink>
-                    </span>
-                    <span className="bannerIcon">
-                      <NextLink href="https://twitter.com/Harysekola" target="_blank" rel="noopener noreferrer">
-                        <FaTwitter />
-                      </NextLink>
-                    </span>
-                    <span className="bannerIcon">
-                      <NextLink href="https://www.linkedin.com/in/azeez-saibu-43b554190/" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedinIn />
-                      </NextLink>
-                    </span>
-                    <span className="bannerIcon">
-                      <NextLink href="https://www.upwork.com/freelancers/~013f7ea7fb8e780c46" target="_blank" rel="noopener noreferrer">
-                        <SiUpwork />
-                      </NextLink>
-                    </span>
-                  </div>
-                </div>
+            <ul className="flex flex-col gap-6">
+              {navLinks.map(({ _id, title, link, num }) => (
+                <li key={_id}>
+                  <Link
+                    onClick={() => setShowMenu(false)}
+                    to={link}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={600}
+                    className="flex items-center gap-3 cursor-pointer group"
+                  >
+                    <span className="font-mono text-[10px] text-dusty">{num}</span>
+                    <span className="font-serif text-xl text-bone/70 group-hover:text-bone transition-colors">{title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
-                <span
-                  onClick={() => setShowMenu(false)}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-designColor duration-300 text-2xl cursor-pointer"
-                >
-                  <MdClose />
-                </span>
+            <div className="mt-auto">
+              <div className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-green" />
+                <span className="font-mono text-[10px] text-dusty">Available for work</span>
               </div>
             </div>
-          )}
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
-}
+};
 
 export default Navbar;
