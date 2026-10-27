@@ -1,7 +1,7 @@
 export default function sitemap() {
   return [
     {
-      url: 'https://azeez-saibu.vercel.app',
+      url: 'https://azeezsaibu.cv',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,

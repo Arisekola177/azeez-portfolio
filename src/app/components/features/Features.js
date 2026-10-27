@@ -49,11 +49,12 @@ const Features = () => {
             </p>
 
             {/* Services in 3 columns */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-inkBorder">
+            <div className="grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-4 gap-6 pt-8 border-t border-inkBorder">
               {[
                 { num: '01', title: 'Web Development', desc: 'Responsive, high-performance apps with Next.js, React, and modern frontend tooling.' },
                 { num: '02', title: 'Full-Stack Solutions', desc: 'End-to-end: Node.js APIs, MongoDB, Prisma, auth, payments, and admin dashboards.' },
                 { num: '03', title: 'E-commerce & SaaS', desc: 'Secure checkout flows, Stripe & Paystack, user portals, and real-time features — from idea to production.' },
+                { num: '04', title: 'EdTech & LMS Platforms', desc: 'Learning platforms end to end: student app, admin and curriculum tools, quizzes, progress tracking, and media storage.' },
               ].map((s) => (
                 <div key={s.num} className="group">
                   <p className="font-mono text-[10px] text-dusty mb-3">{s.num}</p>

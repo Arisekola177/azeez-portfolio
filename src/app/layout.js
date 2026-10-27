@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
-  metadataBase: new URL("https://azeez-saibu.vercel.app"),
+  metadataBase: new URL("https://azeezsaibu.cv"),
   title: "Saibu Azeez (Arisekola) | Full-Stack Web Developer",
   description:
     "Full-Stack Developer with 5+ years of experience building fast, scalable web applications using Next.js, React, Node.js, and MongoDB. Based in Lagos, Nigeria — open to remote opportunities worldwide.",

@@ -9,10 +9,34 @@ import projectThree from "../../assets/images/projects/nexvenda.png";
 import projectFour from "../../assets/images/projects/abadel.png";
 import projectSix from "../../assets/images/projects/raven.png";
 import projectTeleios from "../../assets/images/projects/Teleios.png";
+import projectLms from "../../assets/images/projects/Teleios lms.png";
+import projectAdmin from "../../assets/images/projects/Teleios Admin.png";
 
 const projects = [
   {
     num: '01',
+    title: 'Teleios Learning Platform',
+    category: 'EdTech',
+    stack: ['Next.js', 'Tailwind CSS', 'REST API', 'JWT auth'],
+    description: 'Student learning app for a full-stack developer programme — lessons with video and rich notes, module quizzes, progress tracking, lesson discussions, a study space for notes and bookmarks, and learner insights.',
+    live: 'https://app.jointeleios.com',
+    github: '',
+    image: projectLms,
+    year: 'Ongoing',
+  },
+  {
+    num: '02',
+    title: 'Teleios Admin & Curriculum Manager',
+    category: 'EdTech',
+    stack: ['Next.js', 'Prisma', 'PostgreSQL (Neon)', 'Cloudflare R2'],
+    description: 'Admin dashboard for learning paths, courses, modules and lessons — rich-text lesson editor with image and video storage, quiz management, a lesson-discussion inbox, a student-view lesson preview and content sync scripts with dry-run and restore.',
+    live: '',
+    github: '',
+    image: projectAdmin,
+    year: 'Ongoing',
+  },
+  {
+    num: '03',
     title: 'StreamTube Cinema Platform',
     category: 'Entertainment & Media',
     stack: ['Next.js', 'NextAuth', 'YouTube API', 'Tailwind CSS'],
@@ -23,7 +47,7 @@ const projects = [
     year: '2024',
   },
   {
-    num: '02',
+    num: '04',
     title: 'ShopCart E-Commerce Suite',
     category: 'E-Commerce',
     stack: ['Next.js', 'Prisma', 'MongoDB', 'Stripe'],
@@ -34,7 +58,7 @@ const projects = [
     year: '2024',
   },
   {
-    num: '03',
+    num: '05',
     title: 'Nexvenda Creator Commerce',
     category: 'Creator Commerce',
     stack: ['Next.js', 'MongoDB', 'Stripe', 'Paystack'],
@@ -45,7 +69,7 @@ const projects = [
     year: '2024',
   },
   {
-    num: '04',
+    num: '06',
     title: 'Abadel Luxury Real Estate',
     category: 'Luxury Real Estate',
     stack: ['Next.js', 'Framer Motion', 'Swiper', 'Tailwind CSS'],
@@ -56,7 +80,7 @@ const projects = [
     year: '2023',
   },
   {
-    num: '05',
+    num: '07',
     title: 'Raven Aviation Fuel Platform',
     category: 'Enterprise Logistics',
     stack: ['Next.js', 'Framer Motion', 'Node.js', 'AWS Amplify'],
@@ -67,7 +91,7 @@ const projects = [
     year: '2024',
   },
   {
-    num: '06',
+    num: '08',
     title: 'Teleios AI DevOps Assessment',
     category: 'AI Screening',
     stack: ['Next.js', 'Framer Motion', 'AI/Voice API'],
@@ -133,14 +157,16 @@ const Projects = () => {
 
                 {/* Links */}
                 <div className="flex gap-5 mt-2">
-                  <NextLink
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-mono text-[11px] text-bone/70 hover:text-bone transition-colors uppercase tracking-widest hover-line"
-                  >
-                    Live →
-                  </NextLink>
+                  {project.live && (
+                    <NextLink
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-[11px] text-bone/70 hover:text-bone transition-colors uppercase tracking-widest hover-line"
+                    >
+                      Live →
+                    </NextLink>
+                  )}
                   {project.github && (
                     <NextLink
                       href={project.github}

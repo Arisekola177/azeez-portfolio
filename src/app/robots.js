@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://azeez-saibu.vercel.app/sitemap.xml',
+    sitemap: 'https://azeezsaibu.cv/sitemap.xml',
   };
 }

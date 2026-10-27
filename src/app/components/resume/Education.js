@@ -51,10 +51,10 @@ const Education = () => {
           </div>
           <div className="mt-6 lgl:mt-14 w-full border-l-[6px] border-l-black border-opacity-30 flex flex-col gap-10">
             <ResumeCard
-              title="Frontend Developer"
+              title="In-house Developer"
               subTitle="Teleios — (2023 – Present)"
               result="Lagos, NG"
-              des="Architecting and maintaining premium, high-fidelity React/Next.js interfaces, including the cinematic AI proctored screening platform (featuring real-time voice conversations with Eva) and the main multi-tenant EdTech student LMS and admin dashboards."
+              des="Building and maintaining Teleios's learning platform as the in-house developer: the student LMS and the admin dashboards (Next.js, Prisma, PostgreSQL, Cloudflare R2), curriculum and content tooling, and the cinematic AI proctored screening platform with real-time voice conversations with Eva."
             />
             <ResumeCard
               title="Freelance Full-Stack Developer"

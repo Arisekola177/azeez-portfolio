@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 const workItems = [
   {
     num: '01',
-    role: 'Frontend Developer',
+    role: 'In-house Developer',
     company: 'Teleios',
-    description: 'Cinematic AI DevOps screening platform — Eva voice interviewer, real-time proctoring.',
+    description: 'Building and running the learning platform — student app, admin and curriculum tools, and the AI DevOps screening platform.',
     period: '2023 TO PRESENT',
-    type: 'CONTRACT',
+    type: 'IN-HOUSE',
   },
   {
     num: '02',
