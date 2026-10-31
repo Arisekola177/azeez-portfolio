@@ -14,9 +14,9 @@ const Education = () => {
         <h2 className="text-xl font-titleFont font-bold text-white mb-3">Professional Summary</h2>
         <p className="text-gray-400 text-sm leading-7">
           Full-Stack Developer with <span className="text-designColor font-semibold">5+ years</span> of professional engineering experience building high-performance
-          web applications. Strong expertise in the{' '}
+          web applications, currently as the in-house developer at Teleios. Strong expertise in the{' '}
           <span className="text-white font-semibold">MERN / Next.js stack</span>, specializing in cinematic AI-integrated user interfaces, automated proctoring guards, and high-scale transaction dashboards. Maintained a consistent{' '}
-          <span className="text-designColor font-semibold">5-star client rating</span> across 20+ freelance projects on Upwork.
+          <span className="text-designColor font-semibold">5-star client rating</span> across 20+ projects delivered earlier on Upwork.
         </p>
       </div>
 
@@ -57,7 +57,7 @@ const Education = () => {
               des="Building and maintaining Teleios's learning platform as the in-house developer: the student LMS and the admin dashboards (Next.js, Prisma, PostgreSQL, Cloudflare R2), curriculum and content tooling, and the cinematic AI proctored screening platform with real-time voice conversations with Eva."
             />
             <ResumeCard
-              title="Freelance Full-Stack Developer"
+              title="Full-Stack Developer (Freelance, earlier)"
               subTitle="Upwork — Remote (2020 – 2024)"
               result="🌍 Remote"
               des="Delivered 20+ custom full-stack solutions ranging from enterprise logistics trackers to online store suites. Specialized in high-performance Next.js architectures, secure multi-currency payment gates (Stripe + Paystack), and Prisma database systems. Maintained a consistent 5.0 Upwork client success rating."

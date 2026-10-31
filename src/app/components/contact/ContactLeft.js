@@ -20,7 +20,7 @@ const ContactLeft = () => {
           Full-Stack Web Developer
         </p>
         <p className="text-sm leading-6 text-gray-400">
-          I&apos;m currently available for full-time roles and interesting freelance projects.
+          I&apos;m the in-house developer at Teleios. Feel free to reach out about collaborations or ideas.
           Let&apos;s build something great together.
         </p>
 

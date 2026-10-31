@@ -79,7 +79,7 @@ const Contact = () => {
               <em className="text-bone/40">Let's build it.</em>
             </h2>
             <p className="font-sans text-[14px] text-dusty mt-6 leading-7 max-w-md">
-              I'm currently available for freelance work and full-time remote opportunities. Drop me a message and I'll get back to you within 24 hours.
+              I'm the in-house developer at Teleios, and always happy to talk about collaborations. Drop me a message and I'll get back to you within 24 hours.
             </p>
             <div className="flex flex-wrap gap-6 mt-8">
               <a href="mailto:shuaibazeez14@gmail.com" className="font-mono text-[11px] text-bone hover-line uppercase tracking-widest">

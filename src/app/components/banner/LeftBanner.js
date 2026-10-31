@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 
 const LeftBanner = () => {
   const [text] = useTypewriter({
-    words: ["Full-Stack Developer.", "Next.js Specialist.", "React Expert.", "Problem Solver.", "Freelance Engineer."],
+    words: ["Full-Stack Developer.", "Next.js Specialist.", "React Expert.", "Problem Solver.", "Teleios In-house Developer."],
     loop: true,
     typeSpeed: 20,
     deleteSpeed: 10,

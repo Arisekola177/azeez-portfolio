@@ -31,7 +31,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2 mt-4">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-green" />
-              <span className="font-mono text-[10px] text-dusty">Available for work</span>
+              <span className="font-mono text-[10px] text-dusty">Working at Teleios</span>
             </div>
           </div>
 

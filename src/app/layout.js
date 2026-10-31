@@ -14,7 +14,7 @@ export const metadata = {
     "Full-Stack Developer",
     "Next.js Developer",
     "React Developer",
-    "Freelance Web Developer",
+    "Teleios Developer",
     "Lagos Nigeria Developer",
     "Saibu Azeez",
     "Arisekola",
