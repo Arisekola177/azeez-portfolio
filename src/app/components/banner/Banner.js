@@ -103,8 +103,8 @@ const Banner = () => {
           className="md:border-r border-inkBorder pr-0 md:pr-10"
         >
           <p className="font-mono text-[10px] text-dusty uppercase tracking-widest mb-3">Currently</p>
-          <p className="font-serif text-lg text-bone">Freelance Full-Stack Dev</p>
-          <p className="font-mono text-[11px] text-dusty mt-1">Remote · open to opportunities</p>
+          <p className="font-serif text-lg text-bone">In-house Developer at Teleios</p>
+          <p className="font-mono text-[11px] text-dusty mt-1">Lagos, NG · 2023 to present</p>
         </motion.div>
 
         {/* About snippet */}
